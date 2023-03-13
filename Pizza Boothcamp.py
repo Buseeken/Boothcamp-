@@ -56,14 +56,14 @@ class Sausage(Ingredient):
         
         
 def display_menu():
-    print(\"Welcome to the Pizza Place!")
-    print(\"These are out pizza options:)
-    print(\"1-Margherita: Tomato sauce, mozeralla, basil", 135.00)
-    print(\"2-Türk Pizzası: Tomato sauce, sucuk, kavurma, cheese", 200.00)
-    print(\"3-Dominos: Tomato sauce, sausage, mushroom, cheese", 185.00)
-    print(\"4-Sade: Tomato sauce, cheese", 100.00)
+    print("Welcome to the Pizza Place!")
+    print("These are out pizza options:")
+    print("1-Margherita: Tomato sauce, mozeralla, basil", 135.00)
+    print("2-Türk Pizzası: Tomato sauce, sucuk, kavurma, cheese", 200.00)
+    print("3-Dominos: Tomato sauce, sausage, mushroom, cheese", 185.00)
+    print("4-Sade: Tomato sauce, cheese", 100.00)
     
-    pizza_choice=input(\"Please select a pizza by entering number: \")
+    pizza_choice = input("Please select a pizza by entering number:")
                       
     if pizza_choice == "1":
        pizza = Margherita()
@@ -77,28 +77,28 @@ def display_menu():
         print("Invalid selection")
         return
    
-    print(\"These are the extra ingredients:")
+    print("These are the extra ingredients:")
     
-    print(\"1-Olives - 5.00₺")
-    print(\"2-Cheddar - 15.00₺")
-    print(\"3-Mushroom - 10.00₺")
-    print(\"4-Sausage - 20.00₺")
+    print("1-Olives - 5.00₺")
+    print("2-Cheddar - 15.00₺")
+    print("3-Mushroom - 10.00₺")
+    print("4-Sausage - 20.00₺")
     
-    extras_choice = input(\"Do you want to add extra ingredient? (y/n)")
+    extras_choice = input("Do you want to add extra ingredient? (y/n)")
     
     if extras_choice.lower() == "y" :
-        extras == []:
-        while True
-            extra_choice = input(\"Please select an extra or enter 'done' if you do not want any extra: ")
-            if extra_choice = "1":
+       extras == []
+       while True:
+            extra_choice = input("Please select an extra or enter 'done' if you do not want any extra: ")
+            if extra_choice == 1:
                 extras.appent(Olives())
-            elif extra_choice = "2":
+            elif extra_choice == 2:
                 extras.appent(Cheddar())
-            elif extra_choice = "3":
+            elif extra_choice == 3:
                 extras.appent(Mushroom())
-            elif extra_choice = "4":
+            elif extra_choice == 4:
                 extras.appent(Sausage())
-            elif extra_choice.lower = "done":
+            elif extra_choice.lower == "done":
                 break 
             else:
                 print("Invalid selection!")
@@ -108,7 +108,7 @@ def display_menu():
         
 
 
-   def collect_information():
+def collect_information():
        customer_id = input("Enter your customer ID: ")
        customer_name = input("Enter your name: ")
        print("Enter your credit card information:")
@@ -118,23 +118,23 @@ def display_menu():
        return customer_id, customer_name, credit_card_number, credit_card_password
    
     
-   def collect_information(pizza, extras, total_price):
+def collect_information(pizza, extras, total_price):
        customer_id = input("Enter your customer ID: ")
        customer_name = input("Enter your name: ")
        credit_card_number = input("Enter your credit card number:")
        credit_card_password = input("Enter your credit card password")
-       order_description = {pizza.name} pizza with 
+       order_description = {} pizza  
+       order_description(.format(pizza.name))
        for extra in extras:
            order_description += {extra.name}
-       order_description = order.description.rstrip(\", \")
-       order_time = datetime.now().strftime(\"%Y-&M-&D %H:%M:%S")
+       order_time = datetime.now().strftime("%Y-&M-&D %H:%M:%S")
        
-       with open(\"Orders_Database.csv\", \"a", newline=\"\") as file:
+       with open("Orders_Database.csv", mode='a') as file:
             writer = csv.writer(file)
             writer.writerow([customer_id, customer_name, credit_card_number, credit_card_password, order_description, total_price, order_time])
             
             
-    print("Thank you for your order!")
+print("Thank you for your order!")
       
 
     
